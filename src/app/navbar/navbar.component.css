@@ -1,0 +1,118 @@
+
+
+/* Navigation styles */
+nav {
+  transition: all 1s;
+}
+
+.navbar .container-fluid svg {
+  width: 42px;
+  height: 42px;
+  color: rgba(15, 169, 15, 0.767) !important;
+  font-size: 42px;
+  margin-left: 5px;
+}
+
+.navbar .container-fluid .navbar-brand {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar .container-fluid .active {
+  background-color: rgba(15, 169, 15, 0.767);
+  color: white;
+  border-radius: 5px;
+}
+
+.navbar .container-fluid .out {
+  cursor: pointer !important;
+  width: fit-content !important;
+  position: relative;
+}
+
+.navbar .container-fluid .out a {
+  color: #fff !important;
+}
+
+.navbar .container-fluid .out .heart {
+  transition: all 400ms;
+  animation: beat;
+  animation-duration: 3s;
+  animation-iteration-count: 5;
+}
+
+.navbar .container-fluid .out .cart {
+  position: relative;
+  left: 0px;
+  animation: moving;
+  animation-duration: 3s;
+  animation-iteration-count: 5;
+  transition: all 400ms;
+}
+
+.navbar .container-fluid .out a:-webkit-any-link {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.navbar .container-fluid li {
+  margin-bottom: 0.3rem;
+  padding: 0.5rem;
+}
+
+.navbar .container-fluid li .nav-link {
+  display: inline;
+  padding: 0.5rem;
+}
+
+.navbar .container-fluid .dropdown-menu.show ul {
+  width: 50% !important;
+  height: 2rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .container-fluid .count {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  background-color: rgba(12, 126, 12, 0.8);
+  padding: 0.2rem;
+  z-index: 99;
+}
+
+.navbar .container-fluid .dropdown-menu.show li a.nav-link,
+.navbar .container-fluid .dropdown-menu.show li i {
+  color: black;
+}
+
+.navbar .container-fluid .dropdown-menu.show li a.nav-link {
+  width: 100%;
+  padding: 0 !important;
+}
+
+/* Keyframes */
+@keyframes beat {
+  0% {
+    transform: scale(0.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes moving {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: 2px;
+  }
+  100% {
+    left: 5px;
+  }
+}
