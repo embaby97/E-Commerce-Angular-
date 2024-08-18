@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
   constructor(private _authService: AuthService , private _Router : Router){
-
+    if (localStorage.getItem('userToken') !== null)
+    {
+      _Router.navigate(['/home']);
+    }
   }
   isLoading:boolean = false;
   apiError:string='';

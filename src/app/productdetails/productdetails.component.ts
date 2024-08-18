@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../products.service';
-
+import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-productdetails',
   templateUrl: './productdetails.component.html',
@@ -13,6 +13,31 @@ export class ProductdetailsComponent implements OnInit {
     }
     productDetails : any;
     productId :any;
+
+    customOptions: OwlOptions = {
+      loop: true,
+      mouseDrag: true,
+      touchDrag: false,
+      pullDrag: false,
+      dots: false,
+      navSpeed: 800,
+      navText: ['<', '>'],
+      responsive: {
+        0: {
+          items: 1
+        },
+        400: {
+          items: 2
+        },
+        740: {
+          items: 3
+        },
+        940: {
+          items: 4
+        }
+      },
+      nav: true
+    }
     ngOnInit(): void {
       this._ActivatedRoute.paramMap.subscribe((params)=>{
         this.productId = params.get('id')

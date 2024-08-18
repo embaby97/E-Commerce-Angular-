@@ -1,6 +1,14 @@
 <h3>{{productDetails.title}}</h3>
 <div class="row py-4">
     <div class="col-md-4">
+        <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let slide of productDetails?.image">
+              <ng-template carouselSlide >
+                <img [src]="slide" alt="clothes" class="w-100">
+              </ng-template>
+            </ng-container>
+      
+          </owl-carousel-o>
         <img class="w-100" src="{{productDetails.image}}" alt="">
     </div>
     <div class="col-md-8">
