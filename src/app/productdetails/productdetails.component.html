@@ -1,1 +1,18 @@
-<p>productdetails works!</p>
+<h3>{{productDetails.title}}</h3>
+<div class="row py-4">
+    <div class="col-md-4">
+        <img class="w-100" src="{{productDetails.image}}" alt="">
+    </div>
+    <div class="col-md-8">
+        <h2 class="h4 fw-boldder mb-2">{{productDetails.title}}</h2>
+        <p class="text-muted p-3  ">{{productDetails.description}}</p>
+        <div class="d-flex align-items-center justify-content-between">
+            <span class="text-muted fw-bold font-sm">{{productDetails.price}} EGP</span>
+            <div>
+                <i class="fas fas-star rating-color"></i>
+                <span class="text-muted fw-bold font-sm">{{productDetails.rating.rate}}</span>
+            </div>
+           
+        </div>
+    </div>
+</div>

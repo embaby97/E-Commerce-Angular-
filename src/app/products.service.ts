@@ -14,5 +14,8 @@ export class ProductsService {
   getProducts():Observable<any>{
     return this._httpClinte.get('https://fakestoreapi.com/products/');
   } 
+  getProductDetails(id: string):Observable<any>{
+    return this._httpClinte.get(`https://fakestoreapi.com/products/${id}`);
+  } 
 
 }
