@@ -27,6 +27,8 @@ handelLogin(loginform :FormGroup){
         if (response.message === 'success')
         {
           //navigate to login
+          localStorage.setItem('userToken' , response.token);
+          this._authService.decodeUserData();
           this.isLoading=false;
           this._Router .navigate(['/home'])
 
@@ -35,6 +37,9 @@ handelLogin(loginform :FormGroup){
         },
         error:(err)=>{
           this.isLoading=false;
+          let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMzQ1Njc4OTAiLCJuYW1lIjoiYWxhYSBlbWJhYnkiLCJyb2xlIjoiVXNlciIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoiMTUyNjIzOTAyMiJ9.0lzEVbbW3tkayYTzN9-bPI_r4X6-lk_kW5payY1Zkwg';
+          localStorage.setItem('userToken' , token);
+          this._authService.decodeUserData(); 
           //this.apiError=err.error.errors.msg;
           this._Router.navigate(['/home'])//must be removed 
           

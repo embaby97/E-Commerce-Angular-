@@ -9,24 +9,31 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav m-auto" >
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" routerLinkActive="active" routerLink="home">Home</a>
+            <a class="nav-link" *ngIf="isLogin" routerLinkActive="active" routerLink="home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/product">Products</a>
+            <a class="nav-link" *ngIf="isLogin"  routerLink="/product">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="category_list">Category</a>
+            <a class="nav-link" *ngIf="isLogin"  routerLink="category_list">Category</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="brands">Brands</a>
+            <a class="nav-link" *ngIf="isLogin"  routerLink="brands">Brands</a>
           </li>
         </ul>
   
         <ul class="navbar-nav ms-auto">
        
   
-        
-         
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!isLogin"  routerLink="login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!isLogin"  routerLink="signup">Register</a>
+          </li>
+          <li class="nav-item">
+            <span class="cursor-pointer nav-link" *ngIf="isLogin"  (click)="logOut()">LogOut</span>
+          </li>
   
         </ul>
   

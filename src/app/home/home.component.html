@@ -1,1 +1,20 @@
-<p>home works!</p>
+<div class="row">
+    <div *ngFor="let product of products" class="col-md-2">
+            <div class="product px-2 py-4">
+               <a [routerLink]="['/productdetails', product.id]">
+                <img class="w-100" src="{{product.image}}" alt="">
+                <span class="text-main fw-bold font-sm">{{product.category}} </span>
+                <h2 class="h6 fw-boldder">{{product.title.split(' ') .slice(0,2).join(' ')}}</h2>
+                <div class="d-flex align-items-center justify-content-between">
+                    <span class="text-muted fw-bold font-sm">{{product.price}} EGP</span>
+                    <div>
+                        <i class="fas fas-star rating-color"></i>
+                        <span class="text-muted fw-bold font-sm">{{product.rating.rate}}</span>
+                    </div>
+                   
+                </div>
+                <button class="btn bg-main text-white w-100 my-2">+ Add </button>
+            </a>
+            </div>
+    </div>
+</div>

@@ -6,14 +6,17 @@ import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { CartComponent } from './cart/cart.component';
 import { SignupComponent } from './signup/signup.component';
+import { authGuard } from './auth.guard';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home',canActivate:[authGuard], component: HomeComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart',canActivate:[authGuard], component: CartComponent },
+  { path: 'productdetails/:id',canActivate:[authGuard], component: ProductdetailsComponent },
   { path: 'Signup', component: SignupComponent },
   { path: '**', component: NotfoundComponent },
 ];
